@@ -1,0 +1,1278 @@
+tag: ddq alien final
+env: Alien
+alg: ddq
+learn: atari_ddq
+gamma: 0.99
+sticky: False
+noop: 30
+frames: 4
+rews_scale: 1.0
+test_eps: 0.001
+epoches: 200
+cycles: 20
+iterations: 500
+timesteps: 100
+test_rollouts: 5
+test_timesteps: 27000
+save_rews: True
+save_Q: True
+buffer: episodic
+buffer_size: 1000000
+batch_size: 32
+warmup: 20000
+train_batches: 25
+train_target: 8000
+eps_l: 1.0
+eps_r: 0.01
+eps_decay: 250000
+optimizer: adam
+q_lr: 6.25e-05
+Adam_eps: 0.00015
+nstep: 1
+alpha: 3
+tau: 3
+num_q: 4
+beta: -1.0
+state_dim: 32
+dueling: False
+on_policy: False
+off_policy: True
+2021-01-21 03:55:10.970686: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 03:55:11.023643: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-01-21 03:55:11.024085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.721
+pciBusID: 0000:01:00.0
+totalMemory: 10.91GiB freeMemory: 8.55GiB
+2021-01-21 03:55:11.084244: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-01-21 03:55:11.084608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 1 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.721
+pciBusID: 0000:02:00.0
+totalMemory: 10.92GiB freeMemory: 10.64GiB
+2021-01-21 03:55:11.084714: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0, 1
+2021-01-21 03:55:11.504833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 03:55:11.504866: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 1 
+2021-01-21 03:55:11.504872: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N Y 
+2021-01-21 03:55:11.504876: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 1:   Y N 
+2021-01-21 03:55:11.504959: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8253 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2021-01-21 03:55:11.505173: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10288 MB memory) -> physical GPU (device: 1, name: GeForce GTX 1080 Ti, pci bus id: 0000:02:00.0, compute capability: 6.1)
+*** network initialization complete ***
+*** tester initialization complete ***
+2021-01-21 03:59:42 ddq alien final
+2021-01-21 04:05:19 ddq alien final
+2021-01-21 04:11:04 ddq alien final
+2021-01-21 04:16:45 ddq alien final
+2021-01-21 04:22:47 ddq alien final
+2021-01-21 04:28:35 ddq alien final
+2021-01-21 04:34:52 ddq alien final
+2021-01-21 04:40:47 ddq alien final
+2021-01-21 04:47:20 ddq alien final
+2021-01-21 04:53:21 ddq alien final
+2021-01-21 05:00:11 ddq alien final
+[84, 84, 4]
++---------------------+---------------------+
+| Epoch               | 0/200               |
+| Cycle               | 0/20                |
+| [1m[32mEpisodes[0m            | 77                  |
+| Timesteps           | 50000               |
+| TimeCost(sec)/train | 261.219             |
+| TimeCost(sec)/test  | 6.249               |
+| Q_loss              | -5036587536179952.0 |
+| Epsilon             | 0.901               |
+| Explore_steps       | 643.545             |
+| Q_average           | 6.0                 |
+| Steps               | 465.2               |
+| [1m[32mRewards[0m             | 100.0               |
+| Q_error/mean        | 5.522               |
+| Q_error/std         | 1.568               |
++---------------------+---------------------+
++---------------------+-------------------------+
+| Epoch               | 0/200                   |
+| Cycle               | 1/20                    |
+| [1m[32mEpisodes[0m            | 157                     |
+| Timesteps           | 100000                  |
+| TimeCost(sec)/train | 330.096                 |
+| TimeCost(sec)/test  | 6.398                   |
+| Q_loss              | -2.0799104500605178e+17 |
+| Epsilon             | 0.703                   |
+| Explore_steps       | 628.688                 |
+| Q_average           | 10.0                    |
+| Steps               | 479.6                   |
+| [1m[32mRewards[0m             | 14.0                    |
+| Q_error/mean        | 9.761                   |
+| Q_error/std         | 0.573                   |
++---------------------+-------------------------+
++---------------------+-----------------------+
+| Epoch               | 0/200                 |
+| Cycle               | 2/20                  |
+| [1m[32mEpisodes[0m            | 235                   |
+| Timesteps           | 150000                |
+| TimeCost(sec)/train | 340.585               |
+| TimeCost(sec)/test  | 4.2                   |
+| Q_loss              | 5.506814910802462e+19 |
+| Epsilon             | 0.505                 |
+| Explore_steps       | 636.744               |
+| Q_average           | 4.0                   |
+| Steps               | 310.4                 |
+| [1m[32mRewards[0m             | 30.0                  |
+| Q_error/mean        | 3.926                 |
+| Q_error/std         | 0.369                 |
++---------------------+-----------------------+
++---------------------+------------------------+
+| Epoch               | 0/200                  |
+| Cycle               | 3/20                   |
+| [1m[32mEpisodes[0m            | 318                    |
+| Timesteps           | 200000                 |
+| TimeCost(sec)/train | 331.398                |
+| TimeCost(sec)/test  | 9.643                  |
+| Q_loss              | 1.3439606298642469e+22 |
+| Epsilon             | 0.307                  |
+| Explore_steps       | 607.94                 |
+| Q_average           | 16.0                   |
+| Steps               | 725.8                  |
+| [1m[32mRewards[0m             | 140.0                  |
+| Q_error/mean        | 15.453                 |
+| Q_error/std         | 1.971                  |
++---------------------+------------------------+
++---------------------+----------------------+
+| Epoch               | 0/200                |
+| Cycle               | 4/20                 |
+| [1m[32mEpisodes[0m            | 406                  |
+| Timesteps           | 250000               |
+| TimeCost(sec)/train | 355.635              |
+| TimeCost(sec)/test  | 7.057                |
+| Q_loss              | 2.52163871652769e+24 |
+| Epsilon             | 0.109                |
+| Explore_steps       | 565.955              |
+| Q_average           | 9.0                  |
+| Steps               | 526.6                |
+| [1m[32mRewards[0m             | 140.0                |
+| Q_error/mean        | 8.213                |
+| Q_error/std         | 2.281                |
++---------------------+----------------------+
++---------------------+------------------------+
+| Epoch               | 0/200                  |
+| Cycle               | 5/20                   |
+| [1m[32mEpisodes[0m            | 522                    |
+| Timesteps           | 300000                 |
+| TimeCost(sec)/train | 341.076                |
+| TimeCost(sec)/test  | 6.241                  |
+| Q_loss              | 1.0632756574915942e+25 |
+| Epsilon             | 0.01                   |
+| Explore_steps       | 432.241                |
+| Q_average           | 6.0                    |
+| Steps               | 465.8                  |
+| [1m[32mRewards[0m             | 100.0                  |
+| Q_error/mean        | 5.523                  |
+| Q_error/std         | 1.567                  |
++---------------------+------------------------+
++---------------------+------------------------+
+| Epoch               | 0/200                  |
+| Cycle               | 6/20                   |
+| [1m[32mEpisodes[0m            | 625                    |
+| Timesteps           | 350000                 |
+| TimeCost(sec)/train | 371.358                |
+| TimeCost(sec)/test  | 6.418                  |
+| Q_loss              | 1.1198543437971436e+28 |
+| Epsilon             | 0.01                   |
+| Explore_steps       | 484.379                |
+| Q_average           | 13.0                   |
+| Steps               | 481.6                  |
+| [1m[32mRewards[0m             | 0.0                    |
+| Q_error/mean        | 13.0                   |
+| Q_error/std         | 0.0                    |
++---------------------+------------------------+
++---------------------+-----------------------+
+| Epoch               | 0/200                 |
+| Cycle               | 7/20                  |
+| [1m[32mEpisodes[0m            | 737                   |
+| Timesteps           | 400000                |
+| TimeCost(sec)/train | 348.777               |
+| TimeCost(sec)/test  | 5.903                 |
+| Q_loss              | 9.427910564097682e+30 |
+| Epsilon             | 0.01                  |
+| Explore_steps       | 444.795               |
+| Q_average           | 7.0                   |
+| Steps               | 440.6                 |
+| [1m[32mRewards[0m             | 100.0                 |
+| Q_error/mean        | 6.52                  |
+| Q_error/std         | 1.57                  |
++---------------------+-----------------------+
++---------------------+-----------------------+
+| Epoch               | 0/200                 |
+| Cycle               | 8/20                  |
+| [1m[32mEpisodes[0m            | 847                   |
+| Timesteps           | 450000                |
+| TimeCost(sec)/train | 387.527               |
+| TimeCost(sec)/test  | 5.737                 |
+| Q_loss              | 4.784226422973067e+33 |
+| Epsilon             | 0.01                  |
+| Explore_steps       | 457.736               |
+| Q_average           | 12.0                  |
+| Steps               | 425.2                 |
+| [1m[32mRewards[0m             | 56.0                  |
+| Q_error/mean        | 11.264                |
+| Q_error/std         | 1.926                 |
++---------------------+-----------------------+
++---------------------+-----------------------+
+| Epoch               | 0/200                 |
+| Cycle               | 9/20                  |
+| [1m[32mEpisodes[0m            | 949                   |
+| Timesteps           | 500000                |
+| TimeCost(sec)/train | 355.747               |
+| TimeCost(sec)/test  | 5.138                 |
+| Q_loss              | 6.098438928761708e+33 |
+| Epsilon             | 0.01                  |
+| Explore_steps       | 488.725               |
+| Q_average           | 2.0                   |
+| Steps               | 381.4                 |
+| [1m[32mRewards[0m             | 6.0                   |
+| Q_error/mean        | 1.815                 |
+| Q_error/std         | 0.521                 |
++---------------------+-----------------------+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 10/20   |
+| [1m[32mEpisodes[0m            | 1061    |
+| Timesteps           | 550000  |
+| TimeCost(sec)/train | 403.366 |
+| TimeCost(sec)/test  | 6.207   |
+| Q_loss              | inf     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 445.223 |
+| Q_average           | 6.0     |
+| Steps               | 465.0   |
+| [1m[32mRewards[0m             | 100.0   |
+| Q_error/mean        | 5.522   |
+| Q_error/std         | 1.568   |
++---------------------+---------+2021-01-21 05:07:11 ddq alien final
+/home/hh/DQN-project/algorithm/episodic_memory_ddq.py:72: RuntimeWarning: invalid value encountered in multiply
+  rtn_1[i, 0], rtn_2[i, 0] = r + self.gamma * (1 - truly_done) * np.array(q_t).squeeze()
+2021-01-21 05:13:25 ddq alien final
+2021-01-21 05:20:42 ddq alien final
+2021-01-21 05:27:07 ddq alien final
+2021-01-21 05:34:36 ddq alien final
+2021-01-21 05:41:06 ddq alien final
+2021-01-21 05:48:50 ddq alien final
+2021-01-21 05:56:48 ddq alien final
+2021-01-21 06:03:32 ddq alien final
+2021-01-21 06:11:42 ddq alien final
+2021-01-21 06:18:31 ddq alien final
+2021-01-21 06:26:40 ddq alien final
+2021-01-21 06:33:28 ddq alien final
+2021-01-21 06:41:39 ddq alien final
+2021-01-21 06:48:28 ddq alien final
+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 11/20   |
+| [1m[32mEpisodes[0m            | 1171    |
+| Timesteps           | 600000  |
+| TimeCost(sec)/train | 413.288 |
+| TimeCost(sec)/test  | 6.989   |
+| Q_loss              | inf     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 454.427 |
+| Q_average           | 9.0     |
+| Steps               | 523.2   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 8.207   |
+| Q_error/std         | 2.289   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 12/20   |
+| [1m[32mEpisodes[0m            | 1276    |
+| Timesteps           | 650000  |
+| TimeCost(sec)/train | 368.656 |
+| TimeCost(sec)/test  | 5.677   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 479.0   |
+| Q_average           | 11.0    |
+| Steps               | 422.0   |
+| [1m[32mRewards[0m             | 30.0    |
+| Q_error/mean        | 10.94   |
+| Q_error/std         | 0.341   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 13/20   |
+| [1m[32mEpisodes[0m            | 1396    |
+| Timesteps           | 700000  |
+| TimeCost(sec)/train | 429.146 |
+| TimeCost(sec)/test  | 6.948   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 414.883 |
+| Q_average           | 8.0     |
+| Steps               | 520.0   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 7.19    |
+| Q_error/std         | 2.356   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 14/20   |
+| [1m[32mEpisodes[0m            | 1499    |
+| Timesteps           | 750000  |
+| TimeCost(sec)/train | 377.007 |
+| TimeCost(sec)/test  | 8.336   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 483.883 |
+| Q_average           | 16.0    |
+| Steps               | 631.0   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 15.353  |
+| Q_error/std         | 2.132   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 15/20   |
+| [1m[32mEpisodes[0m            | 1606    |
+| Timesteps           | 800000  |
+| TimeCost(sec)/train | 444.771 |
+| TimeCost(sec)/test  | 4.324   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 468.692 |
+| Q_average           | 3.0     |
+| Steps               | 322.2   |
+| [1m[32mRewards[0m             | 30.0    |
+| Q_error/mean        | 2.913   |
+| Q_error/std         | 0.408   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 16/20   |
+| [1m[32mEpisodes[0m            | 1719    |
+| Timesteps           | 850000  |
+| TimeCost(sec)/train | 385.657 |
+| TimeCost(sec)/test  | 4.234   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 444.442 |
+| Q_average           | 4.0     |
+| Steps               | 315.6   |
+| [1m[32mRewards[0m             | 70.0    |
+| Q_error/mean        | 2.428   |
+| Q_error/std         | 2.321   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 17/20   |
+| [1m[32mEpisodes[0m            | 1823    |
+| Timesteps           | 900000  |
+| TimeCost(sec)/train | 459.831 |
+| TimeCost(sec)/test  | 4.299   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 478.76  |
+| Q_average           | 4.0     |
+| Steps               | 317.8   |
+| [1m[32mRewards[0m             | 52.0    |
+| Q_error/mean        | 3.407   |
+| Q_error/std         | 1.248   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 18/20   |
+| [1m[32mEpisodes[0m            | 1933    |
+| Timesteps           | 950000  |
+| TimeCost(sec)/train | 471.123 |
+| TimeCost(sec)/test  | 6.708   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 454.336 |
+| Q_average           | 17.0    |
+| Steps               | 521.0   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 16.203  |
+| Q_error/std         | 2.294   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 0/200   |
+| Cycle               | 19/20   |
+| [1m[32mEpisodes[0m            | 2033    |
+| Timesteps           | 1000000 |
+| TimeCost(sec)/train | 397.9   |
+| TimeCost(sec)/test  | 6.048   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 502.56  |
+| Q_average           | 15.0    |
+| Steps               | 450.4   |
+| [1m[32mRewards[0m             | 100.0   |
+| Q_error/mean        | 14.533  |
+| Q_error/std         | 1.55    |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 0/20    |
+| [1m[32mEpisodes[0m            | 2145    |
+| Timesteps           | 1050000 |
+| TimeCost(sec)/train | 483.982 |
+| TimeCost(sec)/test  | 6.23    |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 444.5   |
+| Q_average           | 6.0     |
+| Steps               | 466.6   |
+| [1m[32mRewards[0m             | 100.0   |
+| Q_error/mean        | 5.518   |
+| Q_error/std         | 1.573   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 1/20    |
+| [1m[32mEpisodes[0m            | 2255    |
+| Timesteps           | 1100000 |
+| TimeCost(sec)/train | 402.11  |
+| TimeCost(sec)/test  | 6.435   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 456.373 |
+| Q_average           | 1.0     |
+| Steps               | 482.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 1.0     |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 2/20    |
+| [1m[32mEpisodes[0m            | 2361    |
+| Timesteps           | 1150000 |
+| TimeCost(sec)/train | 484.732 |
+| TimeCost(sec)/test  | 4.482   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 470.66  |
+| Q_average           | 4.0     |
+| Steps               | 333.0   |
+| [1m[32mRewards[0m             | 56.0    |
+| Q_error/mean        | 3.327   |
+| Q_error/std         | 2.053   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 3/20    |
+| [1m[32mEpisodes[0m            | 2466    |
+| Timesteps           | 1200000 |
+| TimeCost(sec)/train | 402.21  |
+| TimeCost(sec)/test  | 5.846   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 473.981 |
+| Q_average           | 7.0     |
+| Steps               | 440.0   |
+| [1m[32mRewards[0m             | 100.0   |
+| Q_error/mean        | 6.519   |
+| Q_error/std         | 1.572   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 4/20    |
+| [1m[32mEpisodes[0m            | 2581    |
+| Timesteps           | 1250000 |
+| TimeCost(sec)/train | 485.15  |
+| TimeCost(sec)/test  | 6.453   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 436.991 |
+| Q_average           | 10.0    |
+| Steps               | 481.8   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 10.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 5/20    |
+| [1m[32mEpisodes[0m            | 2683    |
+| Timesteps           | 1300000 |
+| TimeCost(sec)/train | 401.405 |
+| TimeCost(sec)/test  | 6.937   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 489.824 |
+| Q_average           | 17.0    |
+| Steps               | 520.0   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 16.201  |
+| Q_error/std         | 2.297   |
++---------------------+---------+2021-01-21 06:56:37 ddq alien final
+2021-01-21 07:04:49 ddq alien final
+2021-01-21 07:11:38 ddq alien final
+2021-01-21 07:19:49 ddq alien final
+2021-01-21 07:26:39 ddq alien final
+2021-01-21 07:34:48 ddq alien final
+2021-01-21 07:41:39 ddq alien final
+2021-01-21 07:49:49 ddq alien final
+2021-01-21 07:58:01 ddq alien final
+2021-01-21 08:04:49 ddq alien final
+2021-01-21 08:13:00 ddq alien final
+2021-01-21 08:19:49 ddq alien final
+2021-01-21 08:28:01 ddq alien final
+2021-01-21 08:34:49 ddq alien final
+2021-01-21 08:42:59 ddq alien final
+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 6/20    |
+| [1m[32mEpisodes[0m            | 2792    |
+| Timesteps           | 1350000 |
+| TimeCost(sec)/train | 484.502 |
+| TimeCost(sec)/test  | 5.114   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 457.431 |
+| Q_average           | 2.0     |
+| Steps               | 381.2   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 1.916   |
+| Q_error/std         | 0.432   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 7/20    |
+| [1m[32mEpisodes[0m            | 2903    |
+| Timesteps           | 1400000 |
+| TimeCost(sec)/train | 485.569 |
+| TimeCost(sec)/test  | 5.534   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 452.378 |
+| Q_average           | 12.0    |
+| Steps               | 414.0   |
+| [1m[32mRewards[0m             | 30.0    |
+| Q_error/mean        | 11.951  |
+| Q_error/std         | 0.304   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 8/20    |
+| [1m[32mEpisodes[0m            | 3017    |
+| Timesteps           | 1450000 |
+| TimeCost(sec)/train | 402.956 |
+| TimeCost(sec)/test  | 6.428   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 437.184 |
+| Q_average           | 10.0    |
+| Steps               | 482.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 10.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 9/20    |
+| [1m[32mEpisodes[0m            | 3116    |
+| Timesteps           | 1500000 |
+| TimeCost(sec)/train | 484.494 |
+| TimeCost(sec)/test  | 6.969   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 503.192 |
+| Q_average           | 9.0     |
+| Steps               | 522.8   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 8.206   |
+| Q_error/std         | 2.29    |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 10/20   |
+| [1m[32mEpisodes[0m            | 3230    |
+| Timesteps           | 1550000 |
+| TimeCost(sec)/train | 403.097 |
+| TimeCost(sec)/test  | 6.895   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 438.86  |
+| Q_average           | 8.0     |
+| Steps               | 517.8   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 7.186   |
+| Q_error/std         | 2.362   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 11/20   |
+| [1m[32mEpisodes[0m            | 3335    |
+| Timesteps           | 1600000 |
+| TimeCost(sec)/train | 483.917 |
+| TimeCost(sec)/test  | 5.138   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 477.162 |
+| Q_average           | 5.0     |
+| Steps               | 378.2   |
+| [1m[32mRewards[0m             | 20.0    |
+| Q_error/mean        | 4.426   |
+| Q_error/std         | 1.133   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 12/20   |
+| [1m[32mEpisodes[0m            | 3439    |
+| Timesteps           | 1650000 |
+| TimeCost(sec)/train | 402.211 |
+| TimeCost(sec)/test  | 8.197   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 478.394 |
+| Q_average           | 16.0    |
+| Steps               | 620.0   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 15.346  |
+| Q_error/std         | 2.142   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 13/20   |
+| [1m[32mEpisodes[0m            | 3547    |
+| Timesteps           | 1700000 |
+| TimeCost(sec)/train | 485.764 |
+| TimeCost(sec)/test  | 4.321   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 467.731 |
+| Q_average           | 4.0     |
+| Steps               | 318.4   |
+| [1m[32mRewards[0m             | 52.0    |
+| Q_error/mean        | 3.407   |
+| Q_error/std         | 1.246   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 14/20   |
+| [1m[32mEpisodes[0m            | 3661    |
+| Timesteps           | 1750000 |
+| TimeCost(sec)/train | 485.386 |
+| TimeCost(sec)/test  | 6.394   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 438.184 |
+| Q_average           | 13.0    |
+| Steps               | 482.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 13.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 15/20   |
+| [1m[32mEpisodes[0m            | 3772    |
+| Timesteps           | 1800000 |
+| TimeCost(sec)/train | 402.614 |
+| TimeCost(sec)/test  | 6.051   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 448.468 |
+| Q_average           | 15.0    |
+| Steps               | 451.2   |
+| [1m[32mRewards[0m             | 100.0   |
+| Q_error/mean        | 14.534  |
+| Q_error/std         | 1.549   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 16/20   |
+| [1m[32mEpisodes[0m            | 3881    |
+| Timesteps           | 1850000 |
+| TimeCost(sec)/train | 484.129 |
+| TimeCost(sec)/test  | 6.97    |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 458.514 |
+| Q_average           | 9.0     |
+| Steps               | 522.0   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 8.205   |
+| Q_error/std         | 2.292   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 17/20   |
+| [1m[32mEpisodes[0m            | 4001    |
+| Timesteps           | 1900000 |
+| TimeCost(sec)/train | 402.907 |
+| TimeCost(sec)/test  | 5.817   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 415.817 |
+| Q_average           | 7.0     |
+| Steps               | 440.6   |
+| [1m[32mRewards[0m             | 100.0   |
+| Q_error/mean        | 6.52    |
+| Q_error/std         | 1.57    |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 18/20   |
+| [1m[32mEpisodes[0m            | 4096    |
+| Timesteps           | 1950000 |
+| TimeCost(sec)/train | 485.961 |
+| TimeCost(sec)/test  | 5.592   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 528.842 |
+| Q_average           | 12.0    |
+| Steps               | 414.2   |
+| [1m[32mRewards[0m             | 30.0    |
+| Q_error/mean        | 11.951  |
+| Q_error/std         | 0.304   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 1/200   |
+| Cycle               | 19/20   |
+| [1m[32mEpisodes[0m            | 4194    |
+| Timesteps           | 2000000 |
+| TimeCost(sec)/train | 401.574 |
+| TimeCost(sec)/test  | 6.916   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 509.612 |
+| Q_average           | 8.0     |
+| Steps               | 518.0   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 7.186   |
+| Q_error/std         | 2.361   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 0/20    |
+| [1m[32mEpisodes[0m            | 4305    |
+| Timesteps           | 2050000 |
+| TimeCost(sec)/train | 484.151 |
+| TimeCost(sec)/test  | 5.261   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 450.766 |
+| Q_average           | 2.0     |
+| Steps               | 387.6   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 1.858   |
+| Q_error/std         | 0.375   |
++---------------------+---------+2021-01-21 08:49:48 ddq alien final
+2021-01-21 08:57:57 ddq alien final
+2021-01-21 09:06:09 ddq alien final
+2021-01-21 09:12:56 ddq alien final
+2021-01-21 09:21:09 ddq alien final
+2021-01-21 09:27:57 ddq alien final
+2021-01-21 09:36:08 ddq alien final
+2021-01-21 09:42:55 ddq alien final
+2021-01-21 09:51:07 ddq alien final
+2021-01-21 09:59:18 ddq alien final
+2021-01-21 10:06:07 ddq alien final
+2021-01-21 10:14:19 ddq alien final
+2021-01-21 10:21:08 ddq alien final
+2021-01-21 10:29:19 ddq alien final
+2021-01-21 10:36:09 ddq alien final
+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 1/20    |
+| [1m[32mEpisodes[0m            | 4431    |
+| Timesteps           | 2100000 |
+| TimeCost(sec)/train | 403.214 |
+| TimeCost(sec)/test  | 6.024   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 398.167 |
+| Q_average           | 15.0    |
+| Steps               | 450.8   |
+| [1m[32mRewards[0m             | 100.0   |
+| Q_error/mean        | 14.534  |
+| Q_error/std         | 1.549   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 2/20    |
+| [1m[32mEpisodes[0m            | 4536    |
+| Timesteps           | 2150000 |
+| TimeCost(sec)/train | 484.406 |
+| TimeCost(sec)/test  | 5.08    |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 475.943 |
+| Q_average           | 5.0     |
+| Steps               | 377.2   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 5.0     |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 3/20    |
+| [1m[32mEpisodes[0m            | 4650    |
+| Timesteps           | 2200000 |
+| TimeCost(sec)/train | 485.592 |
+| TimeCost(sec)/test  | 6.489   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 438.746 |
+| Q_average           | 10.0    |
+| Steps               | 486.2   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 9.848   |
+| Q_error/std         | 0.451   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 4/20    |
+| [1m[32mEpisodes[0m            | 4757    |
+| Timesteps           | 2250000 |
+| TimeCost(sec)/train | 401.937 |
+| TimeCost(sec)/test  | 4.308   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 465.963 |
+| Q_average           | 3.0     |
+| Steps               | 322.0   |
+| [1m[32mRewards[0m             | 30.0    |
+| Q_error/mean        | 2.913   |
+| Q_error/std         | 0.408   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 5/20    |
+| [1m[32mEpisodes[0m            | 4862    |
+| Timesteps           | 2300000 |
+| TimeCost(sec)/train | 484.504 |
+| TimeCost(sec)/test  | 9.203   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 472.171 |
+| Q_average           | 16.0    |
+| Steps               | 692.8   |
+| [1m[32mRewards[0m             | 140.0   |
+| Q_error/mean        | 15.425  |
+| Q_error/std         | 2.016   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 6/20    |
+| [1m[32mEpisodes[0m            | 4961    |
+| Timesteps           | 2350000 |
+| TimeCost(sec)/train | 402.251 |
+| TimeCost(sec)/test  | 5.062   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 506.939 |
+| Q_average           | 0.0     |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 0.0     |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 7/20    |
+| [1m[32mEpisodes[0m            | 5090    |
+| Timesteps           | 2400000 |
+| TimeCost(sec)/train | 485.976 |
+| TimeCost(sec)/test  | 5.104   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 387.829 |
+| Q_average           | 10.0    |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 10.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 8/20    |
+| [1m[32mEpisodes[0m            | 5223    |
+| Timesteps           | 2450000 |
+| TimeCost(sec)/train | 402.394 |
+| TimeCost(sec)/test  | 4.945   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 378.09  |
+| Q_average           | 10.0    |
+| Steps               | 369.0   |
+| [1m[32mRewards[0m             | 12.0    |
+| Q_error/mean        | 9.773   |
+| Q_error/std         | 0.617   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 9/20    |
+| [1m[32mEpisodes[0m            | 5351    |
+| Timesteps           | 2500000 |
+| TimeCost(sec)/train | 486.288 |
+| TimeCost(sec)/test  | 5.133   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 389.32  |
+| Q_average           | 10.0    |
+| Steps               | 382.2   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 10.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 10/20   |
+| [1m[32mEpisodes[0m            | 5482    |
+| Timesteps           | 2550000 |
+| TimeCost(sec)/train | 486.731 |
+| TimeCost(sec)/test  | 4.949   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 382.977 |
+| Q_average           | 10.0    |
+| Steps               | 368.2   |
+| [1m[32mRewards[0m             | 12.0    |
+| Q_error/mean        | 9.799   |
+| Q_error/std         | 0.511   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 11/20   |
+| [1m[32mEpisodes[0m            | 5611    |
+| Timesteps           | 2600000 |
+| TimeCost(sec)/train | 403.564 |
+| TimeCost(sec)/test  | 4.996   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 387.977 |
+| Q_average           | 10.0    |
+| Steps               | 371.8   |
+| [1m[32mRewards[0m             | 22.0    |
+| Q_error/mean        | 9.582   |
+| Q_error/std         | 0.875   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 12/20   |
+| [1m[32mEpisodes[0m            | 5740    |
+| Timesteps           | 2650000 |
+| TimeCost(sec)/train | 487.011 |
+| TimeCost(sec)/test  | 5.134   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 386.171 |
+| Q_average           | 10.0    |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 10.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 13/20   |
+| [1m[32mEpisodes[0m            | 5870    |
+| Timesteps           | 2700000 |
+| TimeCost(sec)/train | 403.878 |
+| TimeCost(sec)/test  | 5.039   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 384.231 |
+| Q_average           | 10.0    |
+| Steps               | 375.0   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 9.812   |
+| Q_error/std         | 0.525   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 14/20   |
+| [1m[32mEpisodes[0m            | 6001    |
+| Timesteps           | 2750000 |
+| TimeCost(sec)/train | 486.382 |
+| TimeCost(sec)/test  | 5.13    |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 383.267 |
+| Q_average           | 10.0    |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 10.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 15/20   |
+| [1m[32mEpisodes[0m            | 6133    |
+| Timesteps           | 2800000 |
+| TimeCost(sec)/train | 404.646 |
+| TimeCost(sec)/test  | 5.05    |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 376.235 |
+| Q_average           | 10.0    |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 10.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+2021-01-21 10:44:23 ddq alien final
+2021-01-21 10:51:16 ddq alien final
+2021-01-21 10:59:28 ddq alien final
+2021-01-21 11:07:43 ddq alien final
+2021-01-21 11:14:35 ddq alien final
+2021-01-21 11:22:49 ddq alien final
+2021-01-21 11:29:39 ddq alien final
+2021-01-21 11:37:53 ddq alien final
+2021-01-21 11:44:44 ddq alien final
+2021-01-21 11:53:00 ddq alien final
+2021-01-21 12:01:14 ddq alien final
+2021-01-21 12:08:06 ddq alien final
+2021-01-21 12:16:20 ddq alien final
+2021-01-21 12:23:13 ddq alien final
+2021-01-21 12:31:27 ddq alien final
+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 16/20   |
+| [1m[32mEpisodes[0m            | 6266    |
+| Timesteps           | 2850000 |
+| TimeCost(sec)/train | 489.07  |
+| TimeCost(sec)/test  | 5.134   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 378.105 |
+| Q_average           | 10.0    |
+| Steps               | 375.0   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 9.886   |
+| Q_error/std         | 0.479   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 17/20   |
+| [1m[32mEpisodes[0m            | 6396    |
+| Timesteps           | 2900000 |
+| TimeCost(sec)/train | 407.219 |
+| TimeCost(sec)/test  | 5.007   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 383.792 |
+| Q_average           | 10.0    |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 10.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 18/20   |
+| [1m[32mEpisodes[0m            | 6526    |
+| Timesteps           | 2950000 |
+| TimeCost(sec)/train | 487.771 |
+| TimeCost(sec)/test  | 4.907   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 385.908 |
+| Q_average           | 10.0    |
+| Steps               | 368.2   |
+| [1m[32mRewards[0m             | 12.0    |
+| Q_error/mean        | 9.649   |
+| Q_error/std         | 0.6     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 2/200   |
+| Cycle               | 19/20   |
+| [1m[32mEpisodes[0m            | 6657    |
+| Timesteps           | 3000000 |
+| TimeCost(sec)/train | 489.927 |
+| TimeCost(sec)/test  | 5.024   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 380.817 |
+| Q_average           | 10.0    |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 10.0    |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 0/20    |
+| [1m[32mEpisodes[0m            | 6787    |
+| Timesteps           | 3050000 |
+| TimeCost(sec)/train | 406.652 |
+| TimeCost(sec)/test  | 5.07    |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 381.6   |
+| Q_average           | 10.0    |
+| Steps               | 382.6   |
+| [1m[32mRewards[0m             | 12.0    |
+| Q_error/mean        | 9.707   |
+| Q_error/std         | 0.56    |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 1/20    |
+| [1m[32mEpisodes[0m            | 6917    |
+| Timesteps           | 3100000 |
+| TimeCost(sec)/train | 488.877 |
+| TimeCost(sec)/test  | 4.998   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 387.346 |
+| Q_average           | 10.0    |
+| Steps               | 374.4   |
+| [1m[32mRewards[0m             | 10.0    |
+| Q_error/mean        | 9.692   |
+| Q_error/std         | 0.55    |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 2/20    |
+| [1m[32mEpisodes[0m            | 7046    |
+| Timesteps           | 3150000 |
+| TimeCost(sec)/train | 405.099 |
+| TimeCost(sec)/test  | 5.078   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 387.24  |
+| Q_average           | 10.0    |
+| Steps               | 380.4   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 9.892   |
+| Q_error/std         | 0.282   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 3/20    |
+| [1m[32mEpisodes[0m            | 7179    |
+| Timesteps           | 3200000 |
+| TimeCost(sec)/train | 488.706 |
+| TimeCost(sec)/test  | 5.127   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 376.211 |
+| Q_average           | 5.0     |
+| Steps               | 384.8   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 4.907   |
+| Q_error/std         | 0.444   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 4/20    |
+| [1m[32mEpisodes[0m            | 7310    |
+| Timesteps           | 3250000 |
+| TimeCost(sec)/train | 406.179 |
+| TimeCost(sec)/test  | 5.06    |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 380.962 |
+| Q_average           | 5.0     |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 5.0     |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 5/20    |
+| [1m[32mEpisodes[0m            | 7440    |
+| Timesteps           | 3300000 |
+| TimeCost(sec)/train | 490.604 |
+| TimeCost(sec)/test  | 4.931   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 386.792 |
+| Q_average           | 5.0     |
+| Steps               | 370.0   |
+| [1m[32mRewards[0m             | 12.0    |
+| Q_error/mean        | 4.892   |
+| Q_error/std         | 0.289   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 6/20    |
+| [1m[32mEpisodes[0m            | 7567    |
+| Timesteps           | 3350000 |
+| TimeCost(sec)/train | 489.425 |
+| TimeCost(sec)/test  | 5.08    |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 393.165 |
+| Q_average           | 5.0     |
+| Steps               | 380.2   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 4.872   |
+| Q_error/std         | 0.492   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 7/20    |
+| [1m[32mEpisodes[0m            | 7698    |
+| Timesteps           | 3400000 |
+| TimeCost(sec)/train | 406.629 |
+| TimeCost(sec)/test  | 5.108   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 381.168 |
+| Q_average           | 5.0     |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 5.0     |
+| Q_error/std         | 0.0     |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 8/20    |
+| [1m[32mEpisodes[0m            | 7828    |
+| Timesteps           | 3450000 |
+| TimeCost(sec)/train | 489.251 |
+| TimeCost(sec)/test  | 5.023   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 385.631 |
+| Q_average           | 5.0     |
+| Steps               | 375.0   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 4.81    |
+| Q_error/std         | 0.525   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 9/20    |
+| [1m[32mEpisodes[0m            | 7961    |
+| Timesteps           | 3500000 |
+| TimeCost(sec)/train | 407.329 |
+| TimeCost(sec)/test  | 5.033   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 374.128 |
+| Q_average           | 5.0     |
+| Steps               | 375.4   |
+| [1m[32mRewards[0m             | 6.0     |
+| Q_error/mean        | 4.946   |
+| Q_error/std         | 0.358   |
++---------------------+---------+
++---------------------+---------+
+| Epoch               | 3/200   |
+| Cycle               | 10/20   |
+| [1m[32mEpisodes[0m            | 8092    |
+| Timesteps           | 3550000 |
+| TimeCost(sec)/train | 489.284 |
+| TimeCost(sec)/test  | 5.028   |
+| Q_loss              | nan     |
+| Epsilon             | 0.01    |
+| Explore_steps       | 382.458 |
+| Q_average           | 5.0     |
+| Steps               | 377.0   |
+| [1m[32mRewards[0m             | 0.0     |
+| Q_error/mean        | 5.0     |
+| Q_error/std         | 0.0     |
++---------------------+---------+2021-01-21 12:38:18 ddq alien final
+2021-01-21 12:46:30 ddq alien final
+2021-01-21 12:53:20 ddq alien final
+2021-01-21 13:01:32 ddq alien final
+2021-01-21 13:09:45 ddq alien final
+2021-01-21 13:16:33 ddq alien final
+2021-01-21 13:24:45 ddq alien final
+2021-01-21 13:31:34 ddq alien final
+2021-01-21 13:39:46 ddq alien final
+2021-01-21 13:46:36 ddq alien final
