@@ -1,8 +1,8 @@
 # Generalizable Episodic Memory For Deep Reinforcement Learning
 
-![image](https://github.com/MouseHu/GEM/blob/main/GEM.png)
-This is the github containing code of ICML 2021 Paper: "Generalizable Episodic Memory For Deep Reinforcement Learning"
 
+This is the github containing code of ICML 2021 Paper: "Generalizable Episodic Memory For Deep Reinforcement Learning"  
+![image](https://github.com/MouseHu/GEM/blob/main/gem_slogan.png)
 ## Installation
 We use python 3.7 with requirements listed in  requirements.txt
 
