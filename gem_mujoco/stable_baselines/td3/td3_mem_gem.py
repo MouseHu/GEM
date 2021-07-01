@@ -186,22 +186,13 @@ class TD3MemGEM(TD3MemBackProp):
                         qfs = tf.transpose(qfs, [1, 2, 0])
                         qfs = tf.stack([qfs[:, i, i] for i in range(self.num_q)], axis=-1)
                         qfs = tf.reshape(qfs, (self.batch_size, self.num_q))
-
+                    # elif self.double_type == "identical":
+                    #     qfs = tf.transpose(qfs, [1, 0])
                     diff = self.qvalues_ph - qfs + self.q_base
                     qfs_loss = tf.reduce_mean(
                         tf.nn.leaky_relu(sign * diff, alpha=alpha) ** 2) / alpha
-                    self.qfs_loss = qfs_loss
-
-                    qf1 = self.qfs[0, :]
-                    qf2 = self.qfs[1, :]
-
-                    qf1_loss = tf.reduce_mean(
-                        tf.nn.leaky_relu(sign * (self.qvalues_ph - qf1 + self.q_base), alpha=alpha) ** 2) / alpha
-                    qf2_loss = tf.reduce_mean(
-                        tf.nn.leaky_relu(sign * (self.qvalues_ph - qf2 + self.q_base), alpha=alpha) ** 2) / alpha
 
                     qvalues_losses = qfs_loss
-
                     self.policy_loss = policy_loss = -tf.reduce_mean(self.qfs_pi)
 
                     # Policy loss: maximise q value
@@ -250,16 +241,12 @@ class TD3MemGEM(TD3MemBackProp):
                     #     grads = [tf.clip_by_norm(grad, clip_norm=self.clip_norm) for grad in grads]
                     # train_values_op = qvalues_optimizer.apply_gradients(grads)
                     train_values_op = qvalues_optimizer.minimize(qvalues_losses, var_list=qvalues_params)
-                    # self.train_values_op_1 = qvalues_optimizer.minimize(qf1_loss, var_list=qvalues_params)
-                    # self.train_values_op_2 = qvalues_optimizer.minimize(qf2_loss, var_list=qvalues_params)
 
                     self.infos_names = ['qfs_loss', 'q_grad_norm']
                     # All ops to call during one training step
                     self.step_ops = [qfs_loss, grad_norm,
                                      qfs, train_values_op]
 
-                    self.step_ops_1 = [qf1_loss, qf1, self.train_values_op_1]
-                    self.step_ops_2 = [qf2_loss, qf2, self.train_values_op_2]
                     # Monitor losses and entropy in tensorboard
                     tf.summary.scalar('policy_loss', policy_loss)
                     tf.summary.scalar('qfs_loss', qfs_loss)

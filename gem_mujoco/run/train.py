@@ -70,7 +70,7 @@ def run(env_id, seed, layer_norm, evaluation, agent, delay_step, gamma=0.99, **k
                           tau=0.005, policy_delay=2, learning_starts=25000,
                           action_noise=create_action_noise(env, "normal_0.1"), buffer_size=100000, verbose=2,
                           n_cpu_tf_sess=10,
-                          alpha=1, beta=-1, iterative_q=-1,
+                          alpha=0.5, beta=-1, iterative_q=-1,
                           num_q=4, gradient_steps=200, max_step=kwargs['max_steps'], reward_scale=1., nb_eval_steps=10,
                           policy_kwargs={"layers": [400, 300]})
     elif agent == "BP":
